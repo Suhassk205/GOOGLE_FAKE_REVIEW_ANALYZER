@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "TrustLens",
+  "version": "1.0",
+  "description": "Analyze and detect fake reviews with ease.",
+  "permissions": ["storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  }
+}
