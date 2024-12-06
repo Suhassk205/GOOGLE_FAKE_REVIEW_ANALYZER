@@ -20,7 +20,7 @@ The **Google Fake Review Identifier** is a Chrome Extension designed to help use
 ## Installation ⚙️
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/google-fake-review-identifier.git
+   git clone https://github.com/X-DIABLO-X/GOOGLE_FAKE_REVIEW_ANALYZER.git
    ```
 2. Open `chrome://extensions/`, enable **Developer mode**, and click **Load unpacked**. Select the extension folder.
 
@@ -42,4 +42,4 @@ The **Google Fake Review Identifier** is a Chrome Extension designed to help use
 3. Submit a pull request 🚀
 
 ## License 📜
-MIT License
+Scaler School Of Technology
