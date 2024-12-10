@@ -62,12 +62,10 @@
       const plusIcon = createPlusIcon();
       review.appendChild(plusIcon);
 
-      // Increment the colored reviews counter
       colorCounts[colorName]++;
       colorCounts.total++;
     });
 
-    // Send the updated counts to the popup
     chrome.runtime.sendMessage({
       action: "updateReviewCount", 
       counts: colorCounts

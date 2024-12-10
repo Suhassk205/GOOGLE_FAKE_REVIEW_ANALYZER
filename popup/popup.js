@@ -4,7 +4,6 @@ let yellowValue = localStorage.getItem('yellowValue');
 let totalValue = localStorage.getItem('totalValue');
 
 document.getElementById("analyze-reviews").addEventListener("click", () => {
-    // Send a message to content.js
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, { action: "colorReviewsBlue" });
     });
@@ -17,26 +16,22 @@ document.getElementById("analyze-reviews").addEventListener("click", () => {
       <div style="color: black;">Total Reviews: ${totalValue}</div>
   `;
   
-  // Update the result element with the current counts
   resultElement.innerHTML = countsHTML;
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "updateReviewCount") {
-        // Create HTML with color-coded counts
+
         countsHTML = `
             <div style="color: red;">Fake Reviews: ${message.counts.red}</div>
             <div style="color: green;">Genuine Reviews: ${message.counts.green}</div>
             <div style="color: #DAA520;">Suspicious Reviews: ${message.counts.yellow}</div>
             <div style="color: black;">Total Reviews: ${message.counts.total}</div>
         `;
-        
-        // Update the result element with the current counts
         resultElement.innerHTML = countsHTML;
     }
 });
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "updateReviewCount") {
-      // Create HTML with color-coded counts
       redValue = message.counts.red;
       greenValue = message.counts.green;
       yellowValue = message.counts.yellow;
